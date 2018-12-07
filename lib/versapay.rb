@@ -52,6 +52,8 @@ module Versapay
       end
     end
 
+    byebug
+
     if method == :post then
       RestClient.post("https://#{Versapay.token}:#{Versapay.key}@" + Versapay::site + url, args.to_json, :content_type => :json, :accept => :json) do |response, request, result, &block|
         case response.code
